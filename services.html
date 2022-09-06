@@ -1,0 +1,93 @@
+﻿<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="google-site-verification" content="j0tTn-UVgeQZPQukVt4qbeB1WBaN_kupGPPF2EhNElY" />
+		<title>RDMP.RU - Главная</title>
+		<link rel="shortcut icon" href="img/icon2.png" />
+		<meta name="keywords" content="evolve-rp, samp-rp, samprp, гта по сети, samp, evolve"/>
+		<meta name="description" content="Evolve Role Play - Играй в GTA San Andreas по сети! Присоединяйся к нашему серверу!" />
+		<link rel="stylesheet" href="css/evolve15.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<script src="https://vk.com/js/api/openapi.js?139"></script>
+	</head>
+<body>
+	<nav>
+		<div id="cmenu">
+			<li><a href="/" class="logo">RDMP.RU</a></li>
+			<li><a href="http://rdmp.ru/#">Главная</a></li>
+			<li><a href="http://evolve-rp.su">Форум</a></li>
+			<li><a href="http://rdmp.ru/#index.php?ecp=auth">Личный кабинет</a></li>
+			<li><a href="http://rdmp.ru/#index.php?ecp=donate">Донат</a></li>
+			<li><a href="http://rdmp.ru/#index.php?ecp=streams">Трансляции</a></li>
+			<li><a href="http://rdmp.ru/#index.php?ecp=team">Администрация</a></li>
+		</div>
+	</nav>      <header class="rubric">
+      <div class="top animated fadeInLeft">
+        <div class="rubrict">Услуги для персонажа</div>
+      </div>
+    </header>
+	<div id="wrap">
+
+		<div class="bg"><img src="img/bg.png"></div>
+		<div class="overlay" id="overlay" style="display: none;"></div>
+
+	<div class="login animated fadeInUp">
+    <h4>Активные услуги</h4>
+    <div class="navnew" style="margin-top: 5px;">
+      <ul class="right">
+  		   <li><a href="index.php?buy=services&select=unwarn" class="play"><i class="fa fa-warning" aria-hidden="true"></i>&nbsp;&nbsp;Снять один варн</a></li>
+      </ul>
+    </div>
+  </div><footer>
+		<a href="#" id='Go_Top'><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+		<div id="copyright">
+			<a href="http://dj-sergey.ucoz.net">© 2017 Рип by Бикбай.</a>
+				<a href="index.php" class="home"><img src="img/home.png" width="13" height="13"></a>
+		</div>
+
+	</footer>
+
+	</div>
+
+<script src="js/scroll.js"></script>
+<script src="js/app.js"></script>
+<script src="js/vknews.js"></script>
+<script src="js/gotop.js"></script>
+<script type="text/javascript">
+					$(function() {
+					 $.fn.scrollToTop = function() {
+					  $(this).hide().removeAttr("href");
+					  if ($(window).scrollTop() >= "250") $(this).fadeIn("slow")
+					  var scrollDiv = $(this);
+					  $(window).scroll(function() {
+					   if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut("slow")
+					   else $(scrollDiv).fadeIn("slow")
+					  });
+					  $(this).click(function() {
+					   $("html, body").animate({scrollTop: 0}, "slow")
+					  })
+					 }
+					});
+
+					$(function() {
+					 $("#Go_Top").scrollToTop();
+					});
+</script>
+<script type="text/javascript">
+				$(function() {
+					$('#go').click(function(){
+						$('#overlay').fadeIn('fast',function(){
+							$('#box').animate({'top':'160px'},500);
+						});
+					});
+					$('#close').click(function(){
+						$('#box').animate({'top':'-200px'},500,function(){
+							$('#overlay').fadeOut('fast');
+						});
+					});
+
+				});
+</script>
+</body>
