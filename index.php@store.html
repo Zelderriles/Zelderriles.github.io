@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="https://Dirtil-rp.ru/favicon-32.png">
+
+        <link rel="icon" type="image/png" sizes="16x16" href="https://Dirtil-rp.ru/favicon-16.png">
+
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <title>Dirtil Role Play - Магазин</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+
+    	<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+
+    	<link rel="stylesheet" href="assets/css/Article-List.css">
+
+    	<link rel="stylesheet" href="assets/css/Footer-Clean.css">
+
+    	<link rel="stylesheet" href="assets/css/Footer-Dark.css">
+
+    	<link rel="stylesheet" href="assets/css/styles.css">
+
+		<link href="css/style.css" rel="stylesheet">
+
+	</head>
+
+    <body style="background-image: url(img/body.png); background-size: cover;">
+
+           <div class="app">
+
+            <div class="content">
+
+                
+
+			<nav class="navbar navbar-expand-lg navbar-dark">
+
+				<div class="container">
+
+					<button data-toggle="collapse" data-target="#nav-collapse" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+					<div id="nav-collapse" class="collapse navbar-collapse">
+
+						<ul class="navbar-nav ml-auto"><li class="nav-item active">
+
+							<li class="nav-item"><div class="navbar-lgl"><a href="index.html"><img src="img/navbar-logo.png" alt="" class="navbar-img"/></a></div></li>
+
+							<li class="nav-item"><div class="navbar-brand"><a href="index.html" style="color: #FF015B;">Dirtil<br><p align="right"><small style="color: #000000;">Role Play</small></p></a></div></li>
+
+							<a class="nav-link" href="index.html">Главная</a></li>
+
+								<li class="nav-item"><a class="nav-link" href="https://forum-Dirtil.ru">Форум</a></li>
+
+								<li class="nav-item"><a class="nav-link" href="index.php@news.html">Новости</a></li>
+
+								<li class="nav-item"><a class="nav-link" href="index.php@store.html">Магазин</a></li></ul>		
+
+								<ul class="navbar-nav ml-auto log-in">
+
+							<li class="nav-item"><a href="lk.html" class="primary-but">Кабинет</a></li>
+
+							<div class="soon--ava">
+
+								<span>NEW!</span>
+
+							</div>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+			</nav>
+
+
+
+			<script>document.getElementsByTagName('body')[0].classList.add('bg-1');</script>
+
+<div class="container">
+
+				<div class="m-t-100">
+
+					<div class="d-flex justify-content-center"><div class="box-title">Пополнение счета</div></div>
+
+					<div class="row">
+
+						<div class="col-md-5">
+
+							<div class="m-t-50">
+
+								<form id="pay" action="https://unitpay.ru/pay/" method="post">
+
+								<div class="form-group field-form_pay-username required">
+
+								<div class="input-container"><label class="control-label" for="account">Никнейм</label><input type="text" id="form_pay-username" class="inp" name="Form_Pay[username]" placeholder="Введите свой никнейм" aria-required="true"><div class="help-block"></div></div>
+
+								</div>
+
+								<div class="form-group field-form_pay-server">
+
+								<div class="input-container"><label class="control-label" for="form_pay-server">Сервер</label><select id="form_pay-server" class="inp" name="Form_Pay[server]">
+
+								<option value="0">Выберите сервер</option>
+
+								<option value="1">Dirtil Role Play l Акция x3</option>
+
+								</select><div class="help-block"></div></div>
+
+								</div>
+
+								<div class="form-group field-form_pay-sum required">
+
+									<div class="input-container"><label class="control-label" for="sum" id="form_pay-sum_label">Сумма</label><input type="text" id="form_pay-sum" class="inp" name="Form_Pay[sum]" placeholder="Введите сумму" aria-required="true"><div class="help-block"></div></div>
+
+								</div>
+
+								<div class="form-button">
+
+									<input type="button" value="Пополнить" id="form_pay-accept" class="btn btn--Dirtil"></input>
+
+								</div>
+
+
+
+							</form>  
+
+
+
+						</div>
+
+					</div>
+
+
+
+					<div class="col-md-7">
+
+						<div class="render-buy calc-container">
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+
+
+						<div class="packets">
+
+					<div class="row" id="packs">
+
+							<div class="col-md-3 col-sm-6">
+
+								<div class="packet">
+
+									<div class="packet__economy">На халяву<br><span>10.000$</span></div>
+
+									<div class="packet__image packet__image_1"></div>
+
+									<div class="packet__name">Пакет<br>«Карманные расходы»</div>
+
+									<div class="packet__value">50.000$</div>
+
+									<div class="packet__price"><input class="btn btn-outline-light" data-pack="1" data-coast="29" value="Купить за 29 руб"/></div>
+
+								</div>
+
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+
+								<div class="packet">
+
+									<div class="packet__economy">На халяву<br><span>25.000$</span></div>
+
+									<div class="packet__image packet__image_2"></div>
+
+									<div class="packet__name">Пакет<br>«Заначка работяги»</div>
+
+									<div class="packet__value">165.000$</div>
+
+									<div class="packet__price"><input class="btn btn-outline-light" data-pack="2" data-coast="99" value="Купить за 99 руб"/></div>
+
+								</div>
+
+							</div>
+
+											<div class="col-md-3 col-sm-6">
+
+								<div class="packet">
+
+									<div class="packet__economy">На халяву<br><span>40.000$</span></div>
+
+									<div class="packet__image packet__image_3"></div>
+
+									<div class="packet__name">Пакет<br>«Серьёзные намерения»</div>
+
+									<div class="packet__value">400.000$</div>
+
+									<div class="packet__price"><input class="btn btn-outline-light" data-pack="3" data-coast="299" value="Купить за 299 руб"/></div>
+
+								</div>
+
+							</div>
+
+											<div class="col-md-3 col-sm-6">
+
+								<div class="packet">
+
+									<div class="packet__economy">На халяву<br><span>500.000$</span></div>
+
+									<div class="packet__image packet__image_4"></div>
+
+									<div class="packet__name">Пакет<br>«Весомый бюджет»</div>
+
+									<div class="packet__value">1.700.000$</div>
+
+									<div class="packet__price"><input class="btn btn-outline-light" data-pack="4" data-coast="999" value="Купить за 999 руб"/></div>
+
+								</div>
+
+							</div>
+
+							<div class="col-md-6 offset-md-3">
+
+							<h1 align="center" style="color: #fff">Премиум пакет</h1>
+
+							</div>
+
+						<div class="col-md-6 offset-md-3">
+
+							<div class="packet">
+
+									<div class="packet__image packet__image_4"></div>
+
+									<div class="packet__name">Пакет<br>«Миллиардер»</div>
+
+									<div class="packet__value">26.000.000$</div>
+
+									<div class="packet__price"><input class="btn btn-outline-light" data-pack="5" data-coast="2999" value="Купить за 2999 руб"/></div>
+
+								</div>
+
+						</div>
+
+
+
+						<!-- <div class="col-md-3 col-sm-6">
+
+							<div class="packet">
+
+								<div class="packet__image packet__image_5"></div>
+
+								<div class="packet__name">Titan VIP</div>
+
+								<div class="packet__value">вечный</div>
+
+								<div class="packet__price"><a href="/pay?id=5" class="btn btn-outline-light">Купить за 1500 руб</a></div>
+
+							</div>
+
+						</div> -->
+
+					</div>
+
+				</div>
+
+			</div>
+
+        </div>            </div>
+
+
+
+        <script src="assets/js/jquery.min.js"></script>
+
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+        
+
+		<script>
+
+
+
+		var pay_type = 0;
+
+
+
+		var select_pack = 0;
+
+		var select_coast = 0;
+
+
+
+		function load_form(a1) {
+
+			if(a1 == 0) {
+
+				$('#form_pay-accept').on('click', function(event) {
+
+					event.preventDefault();
+
+					console.log('test handler');
+
+					if(pay_type == 0) {
+
+						if($('#form_pay-username').val() != "" && $('#form_pay-sum').val() != "") {
+
+							$.ajax({
+
+							type: 'GET',
+
+							url: 'handler.php?api=1',
+
+							dataType: 'json',
+
+							data: {
+
+								value_1: $('#form_pay-username').val(),
+
+								value_2: $('#form_pay-sum').val()
+
+							},
+
+							success: function(data) {
+
+								if(data != "1") {
+
+									window.location.href = 'https://unitpay.ru/pay/178991-31386/yandex?account=' + data.account + '&sum=' + data.sum + '&desc=' + data.desc + '&signature=' + data.hash;
+
+									load_form(0);
+
+									return true;
+
+								} else {
+
+									$('#pay').html('<p style="color: #fff; text-align: center; padding: 10px;">Такой персонаж не найден, попробуйте ещё раз</p>');
+
+								}
+
+								load_form(0);
+
+							}
+
+							});
+
+						} else {
+
+							$('#pay').html('<p style="color: #fff; text-align: center; padding: 10px;">Данные в полях указаны некорректно. Попробуйте ещё раз</p>');
+
+							load_form(0);
+
+						}
+
+					} else if(pay_type == 1) {
+
+						if($('#form_pay-username').val() != "") {
+
+							$.ajax({
+
+							type: 'GET',
+
+							url: 'handler.php?api=2',
+
+							dataType: 'json',
+
+							data: {
+
+								value_1: $('#form_pay-username').val(),
+
+								value_2: select_coast,
+
+								value_3: select_pack
+
+							},
+
+							success: function(data) {
+
+								if(data != "1") {
+
+									window.location.href = 'https://unitpay.ru/pay/178991-31386/yandex?account=' + data.account + '&sum=' + data.sum + '&desc=' + data.desc + '&signature=' + data.hash;
+
+									load_form(1);
+
+									return true;
+
+								} else {
+
+									$('#pay').html('<p style="color: #fff; text-align: center; padding: 10px;">Такой персонаж не найден, попробуйте ещё раз</p>');
+
+								}
+
+								load_form(1);
+
+							}
+
+							});
+
+						} else {
+
+							$('#pay').html('<p style="color: #fff; text-align: center; padding: 10px;">Данные в полях указаны некорректно. Попробуйте ещё раз</p>');
+
+							load_form(1);
+
+						}
+
+					}
+
+				});
+
+			} else if(a1 == 1) {
+
+				$('[data-pack]').on('click', function(event) {
+
+					event.preventDefault();
+
+					select_pack = $(this).data('pack');
+
+					select_coast = $(this).data('coast');
+
+					console.log('test');
+
+					$('#packs').fadeOut(1000);
+
+					pay_type = 1;
+
+					console.log(select_pack);
+
+					$('.box-title').html("Покупка пака #" + select_pack);
+
+					$('#form_pay-sum_label').remove();
+
+					$('#form_pay-sum').remove();
+
+					$('#form_pay-accept').val("Приобрести за " + select_coast + " РУБ");
+
+				});
+
+			}
+
+		}
+
+		
+
+		load_form(0);
+
+		load_form(1);
+
+		
+
+		</script>
+
+        <div class="footer-dark">
+
+        <footer>
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-3 item">
+
+                        <h3>НАВИГАЦИЯ<br></h3>
+
+                        <ul>
+
+                            <li><a href="index.php.html">Главная<br></a></li>
+
+                            <li><a href="https://forum-Dirtil.ru/index.php?threads/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0.4207/">Правила сервера</a><br></li>
+
+                            <li><a href="index.php@store.html">Пополнить счет</a><br></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 item">
+
+                        <h3><br></h3>
+
+                        <ul>
+
+                            <li><a href="https://forum-Dirtil.ru">Форум<br></a></li>
+
+                            <li><a href="lk.html">Личный кабинет<br></a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-6 item text">
+
+                        <h3>Dirtil Role Play</h3>
+
+                        <p>Начни свои самые захватывающие приключения прямо сейчас!<br></p>
+
+                    </div>
+
+                    <div class="col item social"><a href="https://vk.com/games_norma"><i class="fa fa-vk"></i></a><a href="https://www.instagram.com/Dirtil_samp"><i class="icon ion-social-instagram"></i></a><a href="https://www.youtube.com/channel/UC58W4POBQBNFsh5HhS1MBWw?view_as=subscriber"><i class="fa fa-youtube"></i></a></div>
+
+                </div>
+
+                <p class="copyright">Dirtil Role Play © 2020</p>
+
+            </div>
+
+        </footer>
+
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+</html>

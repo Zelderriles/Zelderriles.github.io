@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Восстановление пароля – Dirtil RolePlay</title>
+	<link rel="stylesheet" href="../../assets/css/style.css@1593787376.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+</head>
+<body class="auth_page">
+	<div class="auth_container">
+		<div class="auth_panel">
+			<div class="auth_logo">
+				<a href="../../../index.html">
+					<img src="../../assets/images/auth/auth_logo.png" alt="N RolePlay">
+				</a>
+			</div>
+
+			<div class="auth_form" style="margin-top: 100px;">
+				<form data-url="/lk/index.php/ajax/restore" action="javascript:void(0)" onsubmit="return false;" method="POST">
+					<div class="auth_form_groups">
+						<div class="auth_form_group">
+							<label for="email">E-mail</label>
+							<input id="email" name="email" type="text" placeholder="Например: player@email.com" required>
+						</div>
+						<div class="auth_form_forgot">
+							<a href="../../../lk.html">Авторизация</a>
+						</div>
+						<div align="center">
+							<input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
+      						<div id="recaptcha" data-sitekey="6LfV4tgUAAAAAAtecfweXthWckpm94Xj9ue0ADmr"></div>
+						</div>
+						<div class="auth_form_submit">
+							<input type="submit" value="Войти" id="button_restore">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		'use strict';
+		var recaptcha;
+
+        var onloadCallback = function() {
+        	recaptcha = grecaptcha.render('recaptcha', {
+	          'sitekey' : $('#recaptcha').data('sitekey'),
+          	  'callback' : verifyCallback,
+	        });
+	        console.log('recaptcha is ready')
+      	};
+      	var verifyCallback = function (response) {
+      		$('#recaptchaResponse').val(response);
+      	};
+
+		$().ready(() => {
+			$('#button_restore').click(() => {
+				$.post($('form').data('url'), {email: $('#email').val()}, (data) => {
+					if(data.success) {
+						toastr.success('Сообщение с дальнейшими инструкциями по восстановлению отправлено на данный адрес электронной почты!', 'Успех!');
+					} else {
+						toastr.error(data.message, 'Ошибка!');
+						grecaptcha.reset(recaptcha);
+      					$('#recaptchaResponse').val('');
+					}
+				}, 'json');
+			});
+		});
+	</script>
+</body>
+</html>

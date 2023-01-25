@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Авторизация</title>
+	<link rel="stylesheet" href="lk/assets/css/style.css@1593787366.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+</head>
+<body class="auth_page">
+	<div class="auth_container">
+		<div class="auth_panel">
+			<div class="auth_logo">
+				<a href="index.html">
+					<img src="lk/assets/images/auth/auth_logo.png" alt="N RolePlay">
+				</a>
+			</div>
+
+			<div class="auth_form">
+				<form data-url="/lk/index.php/login/ajax" action="javascript:void(0)" onsubmit="return false;" method="POST">
+					<div class="auth_form_groups">
+						<div class="auth_form_group">
+							<label for="nickname">Игровой ник</label>
+							<input id="nickname" name="nickname" type="text" placeholder="Например: Ivan_Ivanov" required>
+						</div>
+						<div class="auth_form_group">
+							<label for="nickname">Пароль</label>
+							<input id="password" name="password" type="password" placeholder="**********" required>
+						</div>
+						<div class="auth_form_forgot">
+							<a href="lk/index.php/login/restore.html">Забыли пароль?</a>
+						</div>
+						<div align="center">
+							<input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
+      						<div id="recaptcha" data-sitekey="6LfV4tgUAAAAAAtecfweXthWckpm94Xj9ue0ADmr"></div>
+						</div>
+						<div class="auth_form_submit">
+							<input type="submit" value="Войти" id="button_auth">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		'use strict';
+		var recaptcha;
+
+		
+        var onloadCallback = function() {
+        	recaptcha = grecaptcha.render('recaptcha', {
+	          'sitekey' : $('#recaptcha').data('sitekey'),
+          	  'callback' : verifyCallback,
+	        });
+	        console.log('recaptcha is ready')
+      	};
+      	var verifyCallback = function (response) {
+      		$('#recaptchaResponse').val(response);
+      	};
+
+		$().ready(() => {
+			$('form').submit(() => {
+
+				$.post($('form').data('url'), $('form').serialize(), (data) => {
+					if(data.success) {
+						toastr.success('Перенаправление...', 'Вы успешно авторизовались!');
+						setTimeout(() => {
+							window.location.href = data.redirect_url;
+						}, '2000');
+					} else {
+						toastr.error(data.message, 'Ошибка!');
+						grecaptcha.reset(recaptcha);
+      					$('#recaptchaResponse').val('');
+					}
+				}, 'json');
+			});
+		});
+	</script>
+</body>
+</html>
